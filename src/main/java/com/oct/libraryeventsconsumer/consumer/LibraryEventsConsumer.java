@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class LibraryEventsConsumer {
 
-  @KafkaListener(topics = {"library-events"})
+  @KafkaListener(topics = {"test_topic_kafka"}, groupId = "spring-boot-kafka")
   public void onMessage(ConsumerRecord<Integer, String> consumerRecord) {
     log.info("Consumer Record : <{}>", consumerRecord);
   }
